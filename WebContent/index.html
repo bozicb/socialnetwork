@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type="text/javascript" src="jquery.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Social Network</title>
+</head>
+<body>
+	<h1 id="greeting">Hello, welcome to Social Network!</h1>
+	<script type="text/javascript">
+		var req;
+		
+		function getSuggestionList(query) {
+  			req = new XMLHttpRequest();
+  			req.onreadystatechange = processResults;
+  			req.open("GET", "http://localhost:8081/socialnetwork/social_network/retrieve_person/" + query);
+  			req.setRequestHeader("Content-Type", "application/json");
+  			req.send(null);
+		}
+		
+		function processResults() {
+			if(req.readyState == 4) {
+				var data = req.responseText;
+				document.getElementById("query").value = data;
+			}
+		}
+		
+		function search(user) {
+			window.open("http://localhost:8081/socialnetwork/social_network/persons/"+user, "_self");
+		}
+	</script>
+	<p>Search: <input onkeyup="getSuggestionList(this.value);" id="query" type="text"/><input type="button" name="search" value="Go" onclick="search(query.value)"/></p>
+	<p><a href="http://localhost:8081/socialnetwork/social_network">Home</a>
+</body>
+</html>

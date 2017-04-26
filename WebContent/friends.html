@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Potential Friends Found</title>
+</head>
+<body>
+<script type="text/javascript">
+ var req;
+ //var query = "A";
+ document.writeln(parent.query);
+ req = new XMLHttpRequest();
+ req.onreadystatechange = processResults;
+ req.open("GET", "http://localhost:8081/socialnetwork/social_network/retrieve_person/" + query);
+ req.setRequestHeader("Content-Type", "application/json");
+ req.send(null);
+ 
+  function processResults() {
+  	if(req.readyState == 4) {
+  		var data = req.responseText;
+  		document.writeln("<h2>Potential Friends Found</h2>");
+  		document.writeln("<ul>");
+  		document.writeln("<li>");
+  		document.writeln(data);
+   		document.writeln("</li>");
+  		document.writeln("</ul>");
+  	}
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY ma-ont "http://www.w3.org/ns/ma-ont#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY social-media "http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:ma-ont="http://www.w3.org/ns/ma-ont#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:social-media="http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <Ontology rdf:about="http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media">
+        <imports rdf:resource="http://www.w3.org/ns/ma-ont"/>
+        <imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+    </Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <rdf:Description rdf:about="&foaf;name">
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#collegue -->
+
+    <ObjectProperty rdf:about="&social-media;collegue">
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:range rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#comment -->
+
+    <ObjectProperty rdf:about="&social-media;comment">
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#family -->
+
+    <ObjectProperty rdf:about="&social-media;family">
+        <rdfs:range rdf:resource="&foaf;Person"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#friend -->
+
+    <ObjectProperty rdf:about="&social-media;friend">
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+        <rdfs:range rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#hasActivity -->
+
+    <ObjectProperty rdf:about="&social-media;hasActivity">
+        <rdfs:range rdf:resource="&social-media;Activity"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#hasComment -->
+
+    <ObjectProperty rdf:about="&social-media;hasComment">
+        <rdfs:range rdf:resource="&social-media;Comment"/>
+        <rdfs:domain rdf:resource="&ma-ont;MediaResource"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#hasTag -->
+
+    <ObjectProperty rdf:about="&social-media;hasTag">
+        <rdfs:range rdf:resource="&social-media;Tag"/>
+        <rdfs:domain rdf:resource="&ma-ont;MediaResource"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#image -->
+
+    <ObjectProperty rdf:about="&social-media;image">
+        <rdfs:range rdf:resource="&foaf;Image"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#like -->
+
+    <ObjectProperty rdf:about="&social-media;like">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:range rdf:resource="&social-media;Comment"/>
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#link -->
+
+    <ObjectProperty rdf:about="&social-media;link">
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#list_comments -->
+
+    <ObjectProperty rdf:about="&social-media;list_comments">
+        <rdfs:domain rdf:resource="&social-media;Activity"/>
+        <rdfs:range rdf:resource="&social-media;Comment"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#list_friends -->
+
+    <ObjectProperty rdf:about="&social-media;list_friends">
+        <rdfs:domain rdf:resource="&social-media;Activity"/>
+        <rdfs:range rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#list_media -->
+
+    <ObjectProperty rdf:about="&social-media;list_media">
+        <rdfs:domain rdf:resource="&social-media;Activity"/>
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#location -->
+
+    <ObjectProperty rdf:about="&social-media;location">
+        <rdfs:range rdf:resource="&ma-ont;Location"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#share -->
+
+    <ObjectProperty rdf:about="&social-media;share">
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#tag -->
+
+    <ObjectProperty rdf:about="&social-media;tag">
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#upload -->
+
+    <ObjectProperty rdf:about="&social-media;upload">
+        <rdfs:range rdf:resource="&ma-ont;MediaResource"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#write -->
+
+    <ObjectProperty rdf:about="&social-media;write">
+        <rdfs:range rdf:resource="&social-media;Comment"/>
+        <rdfs:range rdf:resource="&social-media;Tag"/>
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#hasFormat -->
+
+    <rdf:Description rdf:about="&ma-ont;hasFormat">
+        <rdfs:range rdf:resource="&social-media;Format"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#hasURL -->
+
+    <DatatypeProperty rdf:about="&social-media;hasURL">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain rdf:resource="&ma-ont;MediaResource"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#id -->
+
+    <DatatypeProperty rdf:about="&social-media;id">
+        <rdfs:domain rdf:resource="&social-media;Comment"/>
+        <rdfs:domain rdf:resource="&social-media;Tag"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#text -->
+
+    <DatatypeProperty rdf:about="&social-media;text">
+        <rdfs:domain rdf:resource="&social-media;Comment"/>
+        <rdfs:domain rdf:resource="&social-media;Tag"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#title -->
+
+    <rdf:Description rdf:about="&ma-ont;title">
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <rdf:Description rdf:about="&foaf;age">
+        <rdfs:domain rdf:resource="&foaf;Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/page/Person(a) -->
+
+    <Class rdf:about="http://dbpedia.org/page/Person(a)">
+        <equivalentClass rdf:resource="&foaf;Person"/>
+    </Class>
+    
+
+
+    <!-- http://dbpedia.org/page/The_Image_(short_film) -->
+
+    <Class rdf:about="http://dbpedia.org/page/The_Image_(short_film)">
+        <equivalentClass rdf:resource="&ma-ont;Image"/>
+    </Class>
+    
+
+
+    <!-- http://tobyinkster.co.uk/_describe?uri=http://xmlns.com/foaf/0.1/Document -->
+
+    <Class rdf:about="http://tobyinkster.co.uk/_describe?uri=&foaf;Document">
+        <equivalentClass rdf:resource="&foaf;Document"/>
+    </Class>
+    
+
+
+    <!-- http://wordnet.rkbexplorer.com/id/synset-comment-verb-2 -->
+
+    <Class rdf:about="http://wordnet.rkbexplorer.com/id/synset-comment-verb-2">
+        <equivalentClass rdf:resource="&social-media;Comment"/>
+    </Class>
+    
+
+
+    <!-- http://wordnet.rkbexplorer.com/id/wordsense-activity-noun-1 -->
+
+    <Class rdf:about="http://wordnet.rkbexplorer.com/id/wordsense-activity-noun-1">
+        <equivalentClass rdf:resource="&social-media;Activity"/>
+    </Class>
+    
+
+
+    <!-- http://www.ebusiness-unibw.org/ontologies/consumerelectronics/v1#AudioFeatures -->
+
+    <Class rdf:about="http://www.ebusiness-unibw.org/ontologies/consumerelectronics/v1#AudioFeatures">
+        <equivalentClass rdf:resource="&social-media;Audio"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Activity -->
+
+    <Class rdf:about="&social-media;Activity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Audio -->
+
+    <Class rdf:about="&social-media;Audio">
+        <rdfs:subClassOf rdf:resource="&ma-ont;MediaResource"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Comment -->
+
+    <Class rdf:about="&social-media;Comment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Format -->
+
+    <Class rdf:about="&social-media;Format"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Tag -->
+
+    <Class rdf:about="&social-media;Tag"/>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Video -->
+
+    <Class rdf:about="&social-media;Video">
+        <equivalentClass rdf:resource="http://www.techpresentations.org/Category:Video/GoogleVideo"/>
+        <rdfs:subClassOf rdf:resource="&ma-ont;MediaResource"/>
+    </Class>
+    
+
+
+    <!-- http://www.techpresentations.org/Category:Video/GoogleVideo -->
+
+    <Class rdf:about="http://www.techpresentations.org/Category:Video/GoogleVideo"/>
+    
+
+
+    <!-- http://www.w3.org/ns/ma-ont#Image -->
+
+    <rdf:Description rdf:about="&ma-ont;Image"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Document -->
+
+    <rdf:Description rdf:about="&foaf;Document">
+        <rdfs:subClassOf rdf:resource="&ma-ont;MediaResource"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Alice -->
+
+    <NamedIndividual rdf:about="&social-media;Alice">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:age rdf:datatype="&xsd;int">28</foaf:age>
+        <foaf:name rdf:datatype="&xsd;string">Alice</foaf:name>
+        <social-media:location rdf:resource="&social-media;Atlanta"/>
+        <social-media:friend rdf:resource="&social-media;Cecile"/>
+        <social-media:like rdf:resource="&social-media;document1"/>
+        <social-media:upload rdf:resource="&social-media;photo1"/>
+        <social-media:hasActivity rdf:resource="&social-media;triathlons"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Atlanta -->
+
+    <NamedIndividual rdf:about="&social-media;Atlanta">
+        <rdf:type rdf:resource="&ma-ont;Location"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Bob -->
+
+    <NamedIndividual rdf:about="&social-media;Bob">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <foaf:age rdf:datatype="&xsd;integer">30</foaf:age>
+        <foaf:name rdf:datatype="&xsd;string">Bob</foaf:name>
+        <social-media:friend rdf:resource="&social-media;Alice"/>
+        <social-media:location rdf:resource="&social-media;Boston"/>
+        <social-media:friend rdf:resource="&social-media;Cecile"/>
+        <social-media:friend rdf:resource="&social-media;Dan"/>
+        <social-media:write rdf:resource="&social-media;comment1"/>
+        <social-media:upload rdf:resource="&social-media;document1"/>
+        <social-media:like rdf:resource="&social-media;photo1"/>
+        <social-media:hasActivity rdf:resource="&social-media;programming"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Boston -->
+
+    <NamedIndividual rdf:about="&social-media;Boston">
+        <rdf:type rdf:resource="&ma-ont;Location"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Cecile -->
+
+    <NamedIndividual rdf:about="&social-media;Cecile">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <social-media:like rdf:resource="&social-media;photo1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Dan -->
+
+    <NamedIndividual rdf:about="&social-media;Dan">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <social-media:friend rdf:resource="&social-media;Esther"/>
+        <social-media:friend rdf:resource="&social-media;Frank"/>
+        <social-media:like rdf:resource="&social-media;document1"/>
+        <social-media:like rdf:resource="&social-media;photo3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Esther -->
+
+    <NamedIndividual rdf:about="&social-media;Esther">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <social-media:like rdf:resource="&social-media;photo2"/>
+        <social-media:upload rdf:resource="&social-media;video1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#Frank -->
+
+    <NamedIndividual rdf:about="&social-media;Frank">
+        <rdf:type rdf:resource="&foaf;Person"/>
+        <social-media:like rdf:resource="&social-media;photo2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#audio2 -->
+
+    <NamedIndividual rdf:about="&social-media;audio2">
+        <rdf:type rdf:resource="&social-media;Audio"/>
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-01T00:00:00Z</ma-ont:creationDate>
+        <foaf:title>Franz Josef Marsch</foaf:title>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#comment1 -->
+
+    <NamedIndividual rdf:about="&social-media;comment1">
+        <rdf:type rdf:resource="&social-media;Comment"/>
+        <social-media:text>Cool photo ;)</social-media:text>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#document1 -->
+
+    <NamedIndividual rdf:about="&social-media;document1">
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <rdf:type rdf:resource="&foaf;Document"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-03T00:00:00Z</ma-ont:creationDate>
+        <foaf:title>Franz Kafka</foaf:title>
+        <social-media:hasURL>https://moodle.univie.ac.at/pluginfile.php/936914/mod_resource/content/1/Wikipedia-Franz-Kafka.txt</social-media:hasURL>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#document2 -->
+
+    <NamedIndividual rdf:about="&social-media;document2">
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <rdf:type rdf:resource="&foaf;Document"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-01T00:00:00Z</ma-ont:creationDate>
+        <foaf:title>Object Oriented Programming</foaf:title>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#photo1 -->
+
+    <NamedIndividual rdf:about="&social-media;photo1">
+        <rdf:type rdf:resource="&ma-ont;Image"/>
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-01T00:00:00Z</ma-ont:creationDate>
+        <foaf:title rdf:datatype="&xsd;string">Vacation in Vatikan</foaf:title>
+        <social-media:hasURL>http://www.flickr.com/photos/library_of_congress/4733201712/meta/</social-media:hasURL>
+        <social-media:hasComment rdf:resource="&social-media;comment1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#photo2 -->
+
+    <NamedIndividual rdf:about="&social-media;photo2">
+        <rdf:type rdf:resource="&ma-ont;Image"/>
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-01T00:00:00Z</ma-ont:creationDate>
+        <foaf:title rdf:datatype="&xsd;string">Vacation in New Caledonia</foaf:title>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#photo3 -->
+
+    <NamedIndividual rdf:about="&social-media;photo3">
+        <rdf:type rdf:resource="&ma-ont;Image"/>
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-01T00:00:00Z</ma-ont:creationDate>
+        <foaf:title rdf:datatype="&xsd;string">Vacation in Fiji</foaf:title>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#programming -->
+
+    <NamedIndividual rdf:about="&social-media;programming">
+        <rdf:type rdf:resource="&social-media;Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#triathlons -->
+
+    <NamedIndividual rdf:about="&social-media;triathlons">
+        <rdf:type rdf:resource="&social-media;Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bozicb/ontologies/2013/2/social-media#video1 -->
+
+    <NamedIndividual rdf:about="&social-media;video1">
+        <rdf:type rdf:resource="&social-media;Video"/>
+        <rdf:type rdf:resource="&ma-ont;MediaResource"/>
+        <ma-ont:creationDate rdf:datatype="&xsd;dateTime">2012-03-02T00:00:00Z</ma-ont:creationDate>
+        <foaf:title rdf:datatype="&xsd;string">Talk from International Semantic Web Conference 2012</foaf:title>
+        <social-media:hasURL>http://www.youtube.com/watch?v=zpJ9r-BmvYY</social-media:hasURL>
+    </NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
